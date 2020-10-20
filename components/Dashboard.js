@@ -1,4 +1,13 @@
+import netlifyAuth from "../netlifyAuth.js";
+
 export default function Dashboard() {
+  let logout = () => {
+    netlifyAuth.signout(() => {
+      setLoggedIn(false);
+      setUser(null);
+    });
+  };
+
   return (
     <div class="h-screen flex overflow-hidden bg-cool-gray-100">
       {/* <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. --> */}
@@ -640,6 +649,7 @@ export default function Dashboard() {
                       href="#"
                       class="block px-4 py-2 text-sm text-cool-gray-700 hover:bg-cool-gray-100 transition ease-in-out duration-150"
                       role="menuitem"
+                      onClick={logout()}
                     >
                       Logout
                     </a>

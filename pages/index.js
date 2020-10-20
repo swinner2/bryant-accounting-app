@@ -14,13 +14,6 @@ export default function Home() {
     });
   };
 
-  let logout = () => {
-    netlifyAuth.signout(() => {
-      setLoggedIn(false);
-      setUser(null);
-    });
-  };
-
   let [loggedIn, setLoggedIn] = useState(netlifyAuth.isAuthenticated);
   useEffect(() => {
     netlifyAuth.initialize((user) => {
