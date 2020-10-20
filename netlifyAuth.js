@@ -5,9 +5,9 @@ const netlifyAuth = {
   user: null,
   initialize(callback) {
     window.netlifyIdentity = netlifyIdentity;
-    netlifyIdentity.on("init", (user) => {
-      callback(user);
-    });
+    // netlifyIdentity.on("init", (user) => {
+    //   callback(user);
+    // });
     netlifyIdentity.init();
   },
   authenticate(callback) {

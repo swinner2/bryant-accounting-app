@@ -4,31 +4,28 @@ import Footer from "@components/Footer";
 import Dashboard from "@components/Dashboard";
 import { useEffect, useState } from "react";
 import netlifyAuth from "../netlifyAuth.js";
-import netlifyIdentity from "netlify-identity-widget";
+import { render } from "react-dom";
+import React from "react";
 
-export default function Home() {
-  let [user, setUser] = useState(null);
-  let login = () => {
-    netlifyAuth.authenticate((user) => {
-      setLoggedIn(!!user);
-      setUser(user);
-    });
-  };
+class Home extends React.Component {
+  componentDidMount() {
+    netlifyAuth.initialize();
+    if (true) {
+      netlifyAuth.authenticate();
+    }
+  }
 
-  let [loggedIn, setLoggedIn] = useState(netlifyAuth.isAuthenticated);
-  useEffect(() => {
-    netlifyAuth.initialize((user) => {
-      setLoggedIn(!!user);
-    });
-  }, [loggedIn]);
+  render() {
+    return (
+      <div className="container">
+        <Head>
+          <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+        </Head>
 
-  return (
-    <div className="container">
-      {/* <Head>
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-      </Head> */}
-
-      {netlifyIdentity.open()}
-    </div>
-  );
+        {/* {loggedIn ? <Dashboard />} */}
+      </div>
+    );
+  }
 }
+
+export default Home;
