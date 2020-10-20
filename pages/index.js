@@ -4,6 +4,7 @@ import Footer from "@components/Footer";
 import Dashboard from "@components/Dashboard";
 import { useEffect, useState } from "react";
 import netlifyAuth from "../netlifyAuth.js";
+import netlifyIdentity from "netlify-identity-widget";
 
 export default function Home() {
   let [user, setUser] = useState(null);
@@ -27,7 +28,7 @@ export default function Home() {
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </Head>
 
-      {loggedIn ? <Dashboard /> : login()}
+      {loggedIn ? <Dashboard /> : netlifyIdentity.open()}
     </div>
   );
 }
