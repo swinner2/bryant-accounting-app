@@ -24,11 +24,11 @@ export default function Home() {
 
   return (
     <div className="container">
-      <Head>
+      {/* <Head>
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-      </Head>
+      </Head> */}
 
-      {loggedIn ? <Dashboard /> : netlifyIdentity.open()}
+      {netlifyIdentity.open()}
     </div>
   );
 }
