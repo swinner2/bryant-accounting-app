@@ -1,6 +1,5 @@
 import Head from "next/head";
-import Header from "@components/Header";
-import Footer from "@components/Footer";
+import Router from "next/router";
 import Dashboard from "@components/Dashboard";
 import { useEffect, useState } from "react";
 import netlifyAuth from "../netlifyAuth.js";
@@ -13,7 +12,9 @@ export default function Home() {
     netlifyAuth.initialize((user) => {
       setLoggedIn(!!user);
       setUser(user);
-      if (!loggedIn) {
+      if (!user) {
+        console.log("not logged in");
+
         login();
       }
     });
@@ -23,6 +24,7 @@ export default function Home() {
     netlifyAuth.authenticate((user) => {
       setLoggedIn(!!user);
       setUser(user);
+      Router.reload(window.location.pathname);
     });
   };
 
