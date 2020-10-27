@@ -5,19 +5,19 @@ const netlifyAuth = {
   user: null,
   initialize(callback) {
     window.netlifyIdentity = netlifyIdentity;
-    // netlifyIdentity.on("init", (user) => {
-    //   callback(user);
-    // });
+    netlifyIdentity.on("init", (user) => {
+      callback(user);
+    });
     netlifyIdentity.init();
   },
   authenticate(callback) {
-    // this.isAuthenticated = true;
+    this.isAuthenticated = true;
     netlifyIdentity.open();
-    // netlifyIdentity.on("login", (user) => {
-    //   this.user = user;
-    //   callback(user);
-    //   netlifyIdentity.close();
-    // });
+    netlifyIdentity.on("login", (user) => {
+      this.user = user;
+      callback(user);
+      netlifyIdentity.close();
+    });
   },
   signout(callback) {
     this.isAuthenticated = false;
