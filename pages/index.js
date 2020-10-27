@@ -12,6 +12,10 @@ export default function Home() {
   useEffect(() => {
     netlifyAuth.initialize((user) => {
       setLoggedIn(!!user);
+      setUser(user);
+      if (!loggedIn) {
+        login();
+      }
     });
   }, [loggedIn]);
 
@@ -35,7 +39,7 @@ export default function Home() {
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </Head>
 
-      {loggedIn ? <Dashboard /> : login()}
+      {loggedIn && <Dashboard />}
     </div>
   );
 }
