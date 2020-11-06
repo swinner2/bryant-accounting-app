@@ -1,8 +1,12 @@
+import { useState } from "react";
+
 export default function Dashboard() {
+  const [offCanvasIsOn, setOffCanvasIsOn] = useState(false);
+
   return (
     <div className="h-screen flex overflow-hidden bg-cool-gray-100">
       {/* <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. --> */}
-      <div className="lg:hidden">
+      <div className={`${offCanvasIsOn ? "" : "hidden"} lg:hidden`}>
         <div className="fixed inset-0 flex z-40">
           {/* <!--
         Off-canvas menu overlay, show/hide based on off-canvas menu state.
@@ -32,6 +36,7 @@ export default function Dashboard() {
               <button
                 className="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-cool-gray-600"
                 aria-label="Close sidebar"
+                onClick={() => setOffCanvasIsOn(!offCanvasIsOn)}
               >
                 <svg
                   className="h-6 w-6 text-white"
@@ -506,6 +511,7 @@ export default function Dashboard() {
           <button
             className="px-4 border-r border-cool-gray-200 text-cool-gray-400 focus:outline-none focus:bg-cool-gray-100 focus:text-cool-gray-600 lg:hidden"
             aria-label="Open sidebar"
+            onClick={() => setOffCanvasIsOn(!offCanvasIsOn)}
           >
             {/* <!-- Heroicon name: menu-alt-1 --> */}
             <svg
