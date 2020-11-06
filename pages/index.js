@@ -24,7 +24,7 @@ export default function Home() {
     netlifyAuth.authenticate((user) => {
       setLoggedIn(!!user);
       setUser(user);
-      Router.reload(window.location.pathname);
+      Router.reload("/");
     });
   };
 
@@ -33,6 +33,7 @@ export default function Home() {
       setLoggedIn(false);
       setUser(null);
     });
+    Router.reload("/");
   };
 
   return (

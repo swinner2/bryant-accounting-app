@@ -1,6 +1,5 @@
 import { useReducer, useState } from "react";
 import { Transition } from "@headlessui/react";
-import { logout } from "netlify-identity-widget";
 
 export default function Dashboard(props) {
   const [offCanvasIsOn, setOffCanvasIsOn] = useState(false);
@@ -648,7 +647,7 @@ export default function Dashboard(props) {
                       href="#"
                       className="block px-4 py-2 text-sm text-cool-gray-700 hover:bg-cool-gray-100 transition ease-in-out duration-150"
                       role="menuitem"
-                      onClick={() => logout()}
+                      onClick={() => props.logout()}
                     >
                       Logout
                     </a>
