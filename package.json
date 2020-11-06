@@ -9,6 +9,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "@headlessui/react": "^0.2.0",
     "@tailwindcss/ui": "^0.6.2",
     "netlify-identity-widget": "^1.9.1",
     "next": "^9.5.4",

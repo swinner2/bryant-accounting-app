@@ -1,37 +1,37 @@
 import { useState } from "react";
+import { Transition } from "@headlessui/react";
 
 export default function Dashboard() {
   const [offCanvasIsOn, setOffCanvasIsOn] = useState(false);
+  const [profileDropdownIsOn, setProfileDropdownIsOn] = useState(false);
 
   return (
     <div className="h-screen flex overflow-hidden bg-cool-gray-100">
-      {/* <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. --> */}
       <div className={`${offCanvasIsOn ? "" : "hidden"} lg:hidden`}>
         <div className="fixed inset-0 flex z-40">
-          {/* <!--
-        Off-canvas menu overlay, show/hide based on off-canvas menu state.
-
-        Entering: "transition-opacity ease-linear duration-300"
-          From: "opacity-0"
-          To: "opacity-100"
-        Leaving: "transition-opacity ease-linear duration-300"
-          From: "opacity-100"
-          To: "opacity-0"
-      --> */}
-          <div className="fixed inset-0">
+          <Transition
+            show={offCanvasIsOn}
+            enter="transition-opacity ease-linear duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="transition-opacity ease-linear duration-300"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+            className="fixed inset-0"
+          >
             <div className="absolute inset-0 bg-cool-gray-600 opacity-75"></div>
-          </div>
-          {/* <!--
-        Off-canvas menu, show/hide based on off-canvas menu state.
+          </Transition>
 
-        Entering: "transition ease-in-out duration-300 transform"
-          From: "-translate-x-full"
-          To: "translate-x-0"
-        Leaving: "transition ease-in-out duration-300 transform"
-          From: "translate-x-0"
-          To: "-translate-x-full"
-      --> */}
-          <div className="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-teal-600">
+          <Transition
+            show={offCanvasIsOn}
+            enter="transition ease-in-out duration-300 transform"
+            enterFrom="-translate-x-full"
+            enterTo="translate-x-0"
+            leave="transition ease-in-out duration-300 transform"
+            leaveFrom="translate-x-0"
+            leaveTo="-translate-x-full"
+            className="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-teal-600"
+          >
             <div className="absolute top-0 right-0 -mr-14 p-1">
               <button
                 className="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-cool-gray-600"
@@ -56,7 +56,7 @@ export default function Dashboard() {
             <div className="flex-shrink-0 flex items-center px-4">
               <img
                 className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/easywire-logo-on-brand.svg"
+                src="https://tailwindui.com/img/logos/v1/easywire-logo-on-brand.svg"
                 alt="Easywire logo"
               />
             </div>
@@ -271,7 +271,7 @@ export default function Dashboard() {
                 </a>
               </nav>
             </div>
-          </div>
+          </Transition>
           <div className="flex-shrink-0 w-14">
             {/* <!-- Dummy element to force sidebar to shrink to fit close icon --> */}
           </div>
@@ -587,6 +587,7 @@ export default function Dashboard() {
                     id="user-menu"
                     aria-label="User menu"
                     aria-haspopup="true"
+                    onClick={() => setProfileDropdownIsOn(!profileDropdownIsOn)}
                   >
                     <img
                       className="h-8 w-8 rounded-full"
@@ -611,17 +612,17 @@ export default function Dashboard() {
                     </svg>
                   </button>
                 </div>
-                {/* <!--
-              Profile dropdown panel, show/hide based on dropdown state.
 
-              Entering: "transition ease-out duration-100"
-                From: "transform opacity-0 scale-95"
-                To: "transform opacity-100 scale-100"
-              Leaving: "transition ease-in duration-75"
-                From: "transform opacity-100 scale-100"
-                To: "transform opacity-0 scale-95"
-            --> */}
-                <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg">
+                <Transition
+                  show={profileDropdownIsOn}
+                  enter="transition ease-out duration-100"
+                  enterFrom="transform opacity-0 scale-95"
+                  enterTo="transform opacity-100 scale-100"
+                  leave="transition ease-in duration-75"
+                  leaveFrom="transform opacity-100 scale-100"
+                  leaveTo="transform opacity-0 scale-95"
+                  className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg"
+                >
                   <div
                     className="py-1 rounded-md bg-white shadow-xs"
                     role="menu"
@@ -650,7 +651,7 @@ export default function Dashboard() {
                       Logout
                     </a>
                   </div>
-                </div>
+                </Transition>
               </div>
             </div>
           </div>
