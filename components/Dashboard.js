@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useReducer, useState } from "react";
 import { Transition } from "@headlessui/react";
+import { logout } from "netlify-identity-widget";
 
-export default function Dashboard() {
+export default function Dashboard(props) {
   const [offCanvasIsOn, setOffCanvasIsOn] = useState(false);
   const [profileDropdownIsOn, setProfileDropdownIsOn] = useState(false);
 
@@ -286,7 +287,7 @@ export default function Dashboard() {
             <div className="flex items-center flex-shrink-0 px-4">
               <img
                 className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/easywire-logo-on-brand.svg"
+                src="https://tailwindui.com/img/logos/v1/easywire-logo-on-brand.svg"
                 alt="Easywire logo"
               />
             </div>
@@ -595,7 +596,7 @@ export default function Dashboard() {
                       alt=""
                     />
                     <p className="hidden ml-3 text-cool-gray-700 text-sm leading-5 font-medium lg:block">
-                      Emilia Birch
+                      {props.user.user_metadata.full_name}
                     </p>
                     {/* <!-- Heroicon name: chevron-down --> */}
                     <svg
@@ -647,6 +648,7 @@ export default function Dashboard() {
                       href="#"
                       className="block px-4 py-2 text-sm text-cool-gray-700 hover:bg-cool-gray-100 transition ease-in-out duration-150"
                       role="menuitem"
+                      onClick={() => logout()}
                     >
                       Logout
                     </a>
@@ -677,7 +679,7 @@ export default function Dashboard() {
                           alt=""
                         />
                         <h1 className="ml-3 text-2xl font-bold leading-7 text-cool-gray-900 sm:leading-9 sm:truncate">
-                          Good morning, Emilia Birch
+                          Good morning, {props.user.user_metadata.full_name}
                         </h1>
                       </div>
                       <dl className="mt-6 flex flex-col sm:ml-3 sm:mt-1 sm:flex-row sm:flex-wrap">
