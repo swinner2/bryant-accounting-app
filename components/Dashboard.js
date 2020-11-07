@@ -1,13 +1,14 @@
 import { useReducer, useState } from "react";
 import { Transition } from "@headlessui/react";
+import Link from "next/link";
 
 export default function Dashboard(props) {
   const [offCanvasIsOn, setOffCanvasIsOn] = useState(false);
   const [profileDropdownIsOn, setProfileDropdownIsOn] = useState(false);
-  const active = "home";
+  const activeLink = props.activeLink;
   const pages = [
     {
-      slug: "home",
+      link: "/",
       displayName: "Home",
       icon: (classes) => (
         // Heroicon name: home
@@ -28,28 +29,28 @@ export default function Dashboard(props) {
       ),
     },
     {
-      slug: "documents",
+      link: "/documents",
       displayName: "Documents",
       icon: (classes) => (
         // Heroicon name: document
         <svg
-          class={classes}
+          className={classes}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
           ></path>
         </svg>
       ),
     },
     {
-      slug: "invoices",
+      link: "/invoices",
       displayName: "Invoices",
       icon: (classes) => (
         // Heroicon name: credit-card
@@ -70,28 +71,28 @@ export default function Dashboard(props) {
       ),
     },
     {
-      slug: "services",
+      link: "/services",
       displayName: "Services",
       icon: (classes) => (
         // Heroicon name: clipboard-list
         <svg
-          class={classes}
+          className={classes}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
           ></path>
         </svg>
       ),
     },
     {
-      slug: "my-companies",
+      link: "/my-companies",
       displayName: "My Companies",
       icon: (classes) => (
         // Heroicon name: user-group
@@ -112,42 +113,42 @@ export default function Dashboard(props) {
       ),
     },
     {
-      slug: "renewals",
+      link: "/renewals",
       displayName: "Renewals",
       icon: (classes) => (
         // Heroicon name: shield-check
         <svg
-          class={classes}
+          className={classes}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
           ></path>
         </svg>
       ),
     },
     {
-      slug: "make-a-filing",
+      link: "/make-a-filing",
       displayName: "Make A Filing",
       icon: (classes) => (
         // Heroicon name: clipboard-copy
         <svg
-          class={classes}
+          className={classes}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
             d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"
           ></path>
         </svg>
@@ -161,19 +162,21 @@ export default function Dashboard(props) {
     "group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150";
 
   const offCanvasMenuLinks = pages.map((page) => (
-    <a
-      href="#"
-      className={
-        page.slug === active
-          ? offCanvasItemActiveClasses
-          : offCanvasItemInactiveClasses
-      }
-    >
-      {page.icon(
-        "mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"
-      )}
-      {page.displayName}
-    </a>
+    <Link href={page.link} passHref key={page.link}>
+      <a
+        href="#"
+        className={
+          page.link === activeLink
+            ? offCanvasItemActiveClasses
+            : offCanvasItemInactiveClasses
+        }
+      >
+        {page.icon(
+          "mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"
+        )}
+        {page.displayName}
+      </a>
+    </Link>
   ));
 
   const desktopMenuLinkActiveClasses =
@@ -182,19 +185,20 @@ export default function Dashboard(props) {
     "group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150";
 
   const desktopMenuLinks = pages.map((page) => (
-    <a
-      href="#"
-      className={
-        page.slug === active
-          ? desktopMenuLinkActiveClasses
-          : desktopMenuLinkInactiveClasses
-      }
-    >
-      {page.icon(
-        "mr-4 h-6 w-6 text-teal-300 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"
-      )}
-      {page.displayName}
-    </a>
+    <Link href={page.link} passHref key={page.link}>
+      <a
+        className={
+          page.link === activeLink
+            ? desktopMenuLinkActiveClasses
+            : desktopMenuLinkInactiveClasses
+        }
+      >
+        {page.icon(
+          "mr-4 h-6 w-6 text-teal-300 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"
+        )}
+        {page.displayName}
+      </a>
+    </Link>
   ));
 
   return (

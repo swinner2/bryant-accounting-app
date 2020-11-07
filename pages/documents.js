@@ -4,7 +4,7 @@ import Dashboard from "@components/Dashboard";
 import { useEffect, useState } from "react";
 import netlifyAuth from "../netlifyAuth.js";
 
-export default function Home() {
+export default function Documents() {
   let [loggedIn, setLoggedIn] = useState(netlifyAuth.isAuthenticated);
   let [user, setUser] = useState(null);
 
@@ -42,7 +42,9 @@ export default function Home() {
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </Head>
 
-      {loggedIn && <Dashboard user={user} logout={logout} activeLink="/" />}
+      {loggedIn && (
+        <Dashboard user={user} logout={logout} activeLink="/documents" />
+      )}
     </div>
   );
 }
