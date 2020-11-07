@@ -5,7 +5,7 @@ import Settings from "@components/Settings";
 import { useEffect, useState } from "react";
 import netlifyAuth from "../netlifyAuth.js";
 
-export default function Documents() {
+export default function SettingsPage() {
   let [loggedIn, setLoggedIn] = useState(netlifyAuth.isAuthenticated);
   let [user, setUser] = useState(null);
 
@@ -44,7 +44,7 @@ export default function Documents() {
       </Head>
 
       {loggedIn && (
-        <Dashboard user={user} logout={logout} activeLink="/documents">
+        <Dashboard user={user} logout={logout} activeLink="/settings">
           <Settings />
         </Dashboard>
       )}
