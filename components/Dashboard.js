@@ -92,7 +92,7 @@ export default function Dashboard(props) {
       ),
     },
     {
-      link: "/my-companies",
+      link: "/my_companies",
       displayName: "My Companies",
       icon: (classes) => (
         // Heroicon name: user-group
@@ -134,7 +134,7 @@ export default function Dashboard(props) {
       ),
     },
     {
-      link: "/make-a-filing",
+      link: "/filing",
       displayName: "Make A Filing",
       icon: (classes) => (
         // Heroicon name: clipboard-copy

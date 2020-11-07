@@ -44,7 +44,7 @@ export default function Documents() {
       </Head>
 
       {loggedIn && (
-        <Dashboard user={user} logout={logout} activeLink="/documents">
+        <Dashboard user={user} logout={logout} activeLink="/renewals">
           <main
             className="flex-1 overflow-y-auto focus:outline-none"
             tabIndex="0"
@@ -53,7 +53,7 @@ export default function Documents() {
               <div className="pt-10 pb-16">
                 <div className="px-4 sm:px-6 md:px-0">
                   <h1 className="text-3xl leading-9 font-extrabold text-gray-900">
-                    Documents
+                    Renewals
                   </h1>
                 </div>
               </div>
