@@ -251,8 +251,8 @@ export default function Dashboard(props) {
             </div>
             <div className="flex-shrink-0 flex items-center px-4">
               <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/v1/easywire-logo-on-brand.svg"
+                className="h-15 w-auto"
+                src="/bryant-and-associates-white-logo.png"
                 alt="Easywire logo"
               />
             </div>
@@ -354,8 +354,8 @@ export default function Dashboard(props) {
           <div className="flex flex-col flex-grow bg-teal-600 pt-5 pb-4 overflow-y-auto">
             <div className="flex items-center flex-shrink-0 px-4">
               <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/v1/easywire-logo-on-brand.svg"
+                className=" h-20 w-auto"
+                src="/bryant-and-associates-white-logo.png"
                 alt="Easywire logo"
               />
             </div>

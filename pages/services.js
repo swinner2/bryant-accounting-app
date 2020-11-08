@@ -5,7 +5,7 @@ import Settings from "@components/Settings";
 import { useEffect, useState } from "react";
 import netlifyAuth from "../netlifyAuth.js";
 
-export default function Documents() {
+export default function Services() {
   let [loggedIn, setLoggedIn] = useState(netlifyAuth.isAuthenticated);
   let [user, setUser] = useState(null);
 
