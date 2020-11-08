@@ -157,9 +157,9 @@ export default function Dashboard(props) {
   ];
 
   const offCanvasItemActiveClasses =
-    "group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-white bg-teal-700 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150";
+    "group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-white bg-red-700 focus:outline-none focus:bg-red-500 transition ease-in-out duration-150";
   const offCanvasItemInactiveClasses =
-    "group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150";
+    "group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-red-100 hover:text-white hover:bg-red-500 focus:outline-none focus:bg-red-500 transition ease-in-out duration-150";
 
   const offCanvasMenuLinks = nav.map((navItem) => (
     <Link href={navItem.link} passHref key={navItem.link}>
@@ -172,7 +172,7 @@ export default function Dashboard(props) {
         }
       >
         {navItem.icon(
-          "mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"
+          "mr-4 h-6 w-6 text-red-200 group-hover:text-red-200 group-focus:text-red-200 transition ease-in-out duration-150"
         )}
         {navItem.displayName}
       </a>
@@ -180,9 +180,9 @@ export default function Dashboard(props) {
   ));
 
   const desktopMenuLinkActiveClasses =
-    "group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-white bg-teal-700 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150";
+    "group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-white bg-red-700 focus:outline-none focus:bg-red-500 transition ease-in-out duration-150";
   const desktopMenuLinkInactiveClasses =
-    "group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150";
+    "group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-red-100 hover:text-white hover:bg-red-500 focus:outline-none focus:bg-red-500 transition ease-in-out duration-150";
 
   const desktopMenuLinks = nav.map((navItem) => (
     <Link href={navItem.link} passHref key={navItem.link}>
@@ -194,7 +194,7 @@ export default function Dashboard(props) {
         }
       >
         {navItem.icon(
-          "mr-4 h-6 w-6 text-teal-300 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"
+          "mr-4 h-6 w-6 text-red-300 group-hover:text-red-200 group-focus:text-red-200 transition ease-in-out duration-150"
         )}
         {navItem.displayName}
       </a>
@@ -226,7 +226,7 @@ export default function Dashboard(props) {
             leave="transition ease-in-out duration-300 transform"
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full"
-            className="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-teal-600"
+            className="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-red-600"
           >
             <div className="absolute top-0 right-0 -mr-14 p-1">
               <button
@@ -259,7 +259,7 @@ export default function Dashboard(props) {
             <div className="mt-5 overflow-y-auto">
               <nav className="px-2 space-y-1">{offCanvasMenuLinks}</nav>
             </div>
-            <hr className="h-px mt-6 bg-teal-700 border-none" />
+            <hr className="h-px mt-6 bg-red-700 border-none" />
             <div className="mt-6 flex-1 h-0 overflow-y-auto">
               <nav className="px-2 space-y-1">
                 <Link href="/settings" passHref>
@@ -272,7 +272,7 @@ export default function Dashboard(props) {
                   >
                     {/* <!-- Heroicon name: cog --> */}
                     <svg
-                      className="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"
+                      className="mr-4 h-6 w-6 text-red-200 group-hover:text-red-200 group-focus:text-red-200 transition ease-in-out duration-150"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -297,11 +297,11 @@ export default function Dashboard(props) {
 
                 <a
                   href="#"
-                  className="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150"
+                  className="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-red-100 hover:text-white hover:bg-red-500 focus:outline-none focus:bg-red-500 transition ease-in-out duration-150"
                 >
                   {/* <!-- Heroicon name: question-mark-circle --> */}
                   <svg
-                    className="mr-4 h-6 w-6 text-teal-300 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"
+                    className="mr-4 h-6 w-6 text-red-300 group-hover:text-red-200 group-focus:text-red-200 transition ease-in-out duration-150"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -319,11 +319,11 @@ export default function Dashboard(props) {
 
                 <a
                   href="#"
-                  className="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150"
+                  className="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-red-100 hover:text-white hover:bg-red-500 focus:outline-none focus:bg-red-500 transition ease-in-out duration-150"
                 >
                   {/* <!-- Heroicon name: shield-check --> */}
                   <svg
-                    className="mr-4 h-6 w-6 text-teal-300 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"
+                    className="mr-4 h-6 w-6 text-red-300 group-hover:text-red-200 group-focus:text-red-200 transition ease-in-out duration-150"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -351,7 +351,7 @@ export default function Dashboard(props) {
       <div className="hidden lg:flex lg:flex-shrink-0">
         <div className="flex flex-col w-64">
           {/* <!-- Sidebar component, swap this element with another sidebar if you like --> */}
-          <div className="flex flex-col flex-grow bg-teal-600 pt-5 pb-4 overflow-y-auto">
+          <div className="flex flex-col flex-grow bg-red-600 pt-5 pb-4 overflow-y-auto">
             <div className="flex items-center flex-shrink-0 px-4">
               <img
                 className=" h-20 w-auto"
@@ -363,7 +363,7 @@ export default function Dashboard(props) {
               <div className="overflow-y-auto">
                 <nav className="px-2 space-y-1">{desktopMenuLinks}</nav>
               </div>
-              <hr className="h-px mt-6 bg-teal-700 border-none" />
+              <hr className="h-px mt-6 bg-red-700 border-none" />
               <div className="mt-6 flex-1 h-0 overflow-y-auto">
                 <nav className="px-2 space-y-1">
                   <Link href="/settings" passHref>
@@ -376,7 +376,7 @@ export default function Dashboard(props) {
                     >
                       {/* <!-- Heroicon name: cog --> */}
                       <svg
-                        className="mr-4 h-6 w-6 text-teal-200 transition ease-in-out duration-150"
+                        className="mr-4 h-6 w-6 text-red-200 transition ease-in-out duration-150"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -401,11 +401,11 @@ export default function Dashboard(props) {
 
                   <a
                     href="#"
-                    className="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150"
+                    className="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-red-100 hover:text-white hover:bg-red-500 focus:outline-none focus:bg-red-500 transition ease-in-out duration-150"
                   >
                     {/* <!-- Heroicon name: question-mark-circle --> */}
                     <svg
-                      className="mr-4 h-6 w-6 text-teal-200 transition ease-in-out duration-150"
+                      className="mr-4 h-6 w-6 text-red-200 transition ease-in-out duration-150"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -423,11 +423,11 @@ export default function Dashboard(props) {
 
                   <a
                     href="#"
-                    className="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150"
+                    className="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-red-100 hover:text-white hover:bg-red-500 focus:outline-none focus:bg-red-500 transition ease-in-out duration-150"
                   >
                     {/* <!-- Heroicon name: shield-check --> */}
                     <svg
-                      className="mr-4 h-6 w-6 text-teal-200 transition ease-in-out duration-150"
+                      className="mr-4 h-6 w-6 text-red-200 transition ease-in-out duration-150"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"

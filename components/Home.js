@@ -75,7 +75,7 @@ export default function Home(props) {
               <span className="shadow-sm rounded-md">
                 <button
                   type="button"
-                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-600 hover:bg-teal-500 focus:outline-none focus:shadow-outline-teal focus:border-teal-700 active:bg-teal-700 transition duration-150 ease-in-out"
+                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-red-600 hover:bg-red-500 focus:outline-none focus:shadow-outline-red focus:border-red-700 active:bg-red-700 transition duration-150 ease-in-out"
                 >
                   Send money
                 </button>
@@ -131,7 +131,7 @@ export default function Home(props) {
                 <div className="text-sm leading-5">
                   <a
                     href="#"
-                    className="font-medium text-teal-600 hover:text-teal-900 transition ease-in-out duration-150"
+                    className="font-medium text-red-600 hover:text-red-900 transition ease-in-out duration-150"
                   >
                     View all
                   </a>
