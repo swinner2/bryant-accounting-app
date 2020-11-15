@@ -14,4 +14,7 @@ module.exports = {
       layout: "sidebar",
     }),
   ],
+  future: {
+    purgeLayersByDefault: true,
+  },
 };
