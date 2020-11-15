@@ -1,5 +1,6 @@
 import "../styles/tailwind.css";
 import { useEffect, useState } from "react";
+import Dashboard from "@components/Dashboard";
 import netlifyAuth from "../netlifyAuth.js";
 
 export default function MyApp({ Component, pageProps }) {
@@ -35,6 +36,17 @@ export default function MyApp({ Component, pageProps }) {
   };
 
   return (
-    <Component {...pageProps} login={login} user={user} loggedIn={loggedIn} />
+    <div className="container">
+      {loggedIn && (
+        <Dashboard user={user} logout={logout}>
+          <Component
+            {...pageProps}
+            login={login}
+            user={user}
+            loggedIn={loggedIn}
+          />
+        </Dashboard>
+      )}
+    </div>
   );
 }
