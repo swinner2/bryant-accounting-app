@@ -2,6 +2,7 @@ import "../styles/tailwind.css";
 import { useEffect, useState } from "react";
 import Dashboard from "@components/Dashboard";
 import netlifyAuth from "../netlifyAuth.js";
+import Router from "next/router";
 
 export default function MyApp({ Component, pageProps }) {
   let [loggedIn, setLoggedIn] = useState(netlifyAuth.isAuthenticated);
