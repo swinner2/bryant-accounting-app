@@ -22,7 +22,7 @@ export default function Settings({ loggedIn, user, logout }) {
                 <div className="lg:hidden">
                   <select
                     aria-label="Selected tab"
-                    className="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5 transition ease-in-out duration-150"
+                    className="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:ring-blue focus:border-blue-300 sm:text-sm sm:leading-5 transition ease-in-out duration-150"
                     defaultValue="General"
                   >
                     <option>General</option>
@@ -43,42 +43,42 @@ export default function Settings({ loggedIn, user, logout }) {
                     <nav className="-mb-px flex">
                       <a
                         href="#"
-                        className="whitespace-no-wrap py-4 px-1 border-b-2 border-purple-500 font-medium text-sm leading-5 text-purple-600 focus:outline-none focus:text-purple-800 focus:border-purple-700"
+                        className="whitespace-nowrap py-4 px-1 border-b-2 border-purple-500 font-medium text-sm leading-5 text-purple-600 focus:outline-none focus:text-purple-800 focus:border-purple-700"
                       >
                         General
                       </a>
 
                       <a
                         href="#"
-                        className="whitespace-no-wrap ml-8 py-4 px-1 border-b-2 border-transparent font-medium text-sm leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300"
+                        className="whitespace-nowrap ml-8 py-4 px-1 border-b-2 border-transparent font-medium text-sm leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300"
                       >
                         Password
                       </a>
 
                       <a
                         href="#"
-                        className="whitespace-no-wrap ml-8 py-4 px-1 border-b-2 border-transparent font-medium text-sm leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300"
+                        className="whitespace-nowrap ml-8 py-4 px-1 border-b-2 border-transparent font-medium text-sm leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300"
                       >
                         Notifications
                       </a>
 
                       <a
                         href="#"
-                        className="whitespace-no-wrap ml-8 py-4 px-1 border-b-2 border-transparent font-medium text-sm leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300"
+                        className="whitespace-nowrap ml-8 py-4 px-1 border-b-2 border-transparent font-medium text-sm leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300"
                       >
                         Plan
                       </a>
 
                       <a
                         href="#"
-                        className="whitespace-no-wrap ml-8 py-4 px-1 border-b-2 border-transparent font-medium text-sm leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300"
+                        className="whitespace-nowrap ml-8 py-4 px-1 border-b-2 border-transparent font-medium text-sm leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300"
                       >
                         Billing
                       </a>
 
                       <a
                         href="#"
-                        className="whitespace-no-wrap ml-8 py-4 px-1 border-b-2 border-transparent font-medium text-sm leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300"
+                        className="whitespace-nowrap ml-8 py-4 px-1 border-b-2 border-transparent font-medium text-sm leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300"
                       >
                         Team Members
                       </a>
@@ -248,7 +248,7 @@ export default function Settings({ loggedIn, user, logout }) {
                             role="checkbox"
                             tabIndex="0"
                             aria-checked="true"
-                            className="bg-gray-200 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:shadow-outline sm:ml-auto"
+                            className="bg-gray-200 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring sm:ml-auto"
                           >
                             {/* <!-- On: "translate-x-5", Off: "translate-x-0" --> */}
                             <span
@@ -268,7 +268,7 @@ export default function Settings({ loggedIn, user, logout }) {
                             role="checkbox"
                             tabIndex="0"
                             aria-checked="false"
-                            className="bg-gray-200 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:shadow-outline sm:ml-auto"
+                            className="bg-gray-200 relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring sm:ml-auto"
                           >
                             {/* <!-- On: "translate-x-5", Off: "translate-x-0" --> */}
                             <span

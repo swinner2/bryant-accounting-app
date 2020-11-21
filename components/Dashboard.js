@@ -181,7 +181,7 @@ export default function Dashboard({ user, logout, children }) {
   ));
 
   return (
-    <div className="h-screen flex overflow-hidden bg-cool-gray-100">
+    <div className="h-screen flex overflow-hidden bg-gray-100">
       <div className={`${offCanvasIsOn ? "" : "hidden"} lg:hidden`}>
         <div className="fixed inset-0 flex z-40">
           <Transition
@@ -194,7 +194,7 @@ export default function Dashboard({ user, logout, children }) {
             leaveTo="opacity-0"
             className="fixed inset-0"
           >
-            <div className="absolute inset-0 bg-cool-gray-600 opacity-75"></div>
+            <div className="absolute inset-0 bg-gray-600 opacity-75"></div>
           </Transition>
 
           <Transition
@@ -209,7 +209,7 @@ export default function Dashboard({ user, logout, children }) {
           >
             <div className="absolute top-0 right-0 -mr-14 p-1">
               <button
-                className="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-cool-gray-600"
+                className="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-gray-600"
                 aria-label="Close sidebar"
                 onClick={() => setOffCanvasIsOn(!offCanvasIsOn)}
               >
@@ -430,7 +430,7 @@ export default function Dashboard({ user, logout, children }) {
       <div className="flex-1 overflow-auto focus:outline-none" tabIndex="0">
         <div className="relative z-10 flex-shrink-0 flex h-16 bg-white border-b border-gray-200 lg:border-none">
           <button
-            className="px-4 border-r border-cool-gray-200 text-cool-gray-400 focus:outline-none focus:bg-cool-gray-100 focus:text-cool-gray-600 lg:hidden"
+            className="px-4 border-r border-gray-200 text-gray-400 focus:outline-none focus:bg-gray-100 focus:text-gray-600 lg:hidden"
             aria-label="Open sidebar"
             onClick={() => setOffCanvasIsOn(!offCanvasIsOn)}
           >
@@ -457,8 +457,8 @@ export default function Dashboard({ user, logout, children }) {
                 <label htmlFor="search_field" className="sr-only">
                   Search
                 </label>
-                <div className="relative w-full text-cool-gray-400 focus-within:text-cool-gray-600">
-                  <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none">
+                <div className="relative w-full text-gray-400 focus-within:text-gray-600">
+                  <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none" aria-hidden="true">
                     <svg
                       className="h-5 w-5"
                       fill="currentColor"
@@ -473,7 +473,7 @@ export default function Dashboard({ user, logout, children }) {
                   </div>
                   <input
                     id="search_field"
-                    className="block w-full h-full pl-8 pr-3 py-2 rounded-md text-cool-gray-900 placeholder-cool-gray-500 focus:outline-none focus:placeholder-cool-gray-400 sm:text-sm"
+                    className="block w-full h-full pl-8 pr-3 py-2 border-transparent text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-transparent sm:text-smblock w-full h-full pl-8 pr-3 py-2 rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 sm:text-sm"
                     placeholder="Search"
                     type="search"
                   />
@@ -482,7 +482,7 @@ export default function Dashboard({ user, logout, children }) {
             </div>
             <div className="ml-4 flex items-center md:ml-6">
               <button
-                className="p-1 text-cool-gray-400 rounded-full hover:bg-cool-gray-100 hover:text-cool-gray-500 focus:outline-none focus:shadow-outline focus:text-cool-gray-500"
+                className="p-1 text-gray-400 rounded-full hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring focus:text-gray-500"
                 aria-label="Notifications"
               >
                 <svg
@@ -504,7 +504,7 @@ export default function Dashboard({ user, logout, children }) {
               <div className="ml-3 relative">
                 <div>
                   <button
-                    className="max-w-xs flex items-center text-sm rounded-full focus:outline-none focus:bg-cool-gray-100 lg:p-2 lg:rounded-md lg:hover:bg-cool-gray-100"
+                    className="max-w-xs flex items-center text-sm rounded-full focus:outline-none focus:bg-gray-100 lg:p-2 lg:rounded-md lg:hover:bg-gray-100"
                     id="user-menu"
                     aria-label="User menu"
                     aria-haspopup="true"
@@ -515,12 +515,12 @@ export default function Dashboard({ user, logout, children }) {
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                       alt=""
                     />
-                    <p className="hidden ml-3 text-cool-gray-700 text-sm leading-5 font-medium lg:block">
+                    <p className="hidden ml-3 text-gray-700 text-sm leading-5 font-medium lg:block">
                       {user.user_metadata.full_name}
                     </p>
                     {/* <!-- Heroicon name: chevron-down --> */}
                     <svg
-                      className="hidden flex-shrink-0 ml-1 h-5 w-5 text-cool-gray-400 lg:block"
+                      className="hidden flex-shrink-0 ml-1 h-5 w-5 text-gray-400 lg:block"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"
@@ -545,21 +545,21 @@ export default function Dashboard({ user, logout, children }) {
                   className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg"
                 >
                   <div
-                    className="py-1 rounded-md bg-white shadow-xs"
+                    className="py-1 rounded-md bg-white ring-1 ring-black ring-opacity-5"
                     role="menu"
                     aria-orientation="vertical"
                     aria-labelledby="user-menu"
                   >
                     <a
                       href="#"
-                      className="block px-4 py-2 text-sm text-cool-gray-700 hover:bg-cool-gray-100 transition ease-in-out duration-150"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition ease-in-out duration-150"
                       role="menuitem"
                     >
                       Your Profile
                     </a>
                     <Link href="/settings" passHref>
                       <a
-                        className="block px-4 py-2 text-sm text-cool-gray-700 hover:bg-cool-gray-100 transition ease-in-out duration-150"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition ease-in-out duration-150"
                         role="menuitem"
                       >
                         Settings
@@ -567,7 +567,7 @@ export default function Dashboard({ user, logout, children }) {
                     </Link>
                     <a
                       href="#"
-                      className="block px-4 py-2 text-sm text-cool-gray-700 hover:bg-cool-gray-100 transition ease-in-out duration-150"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition ease-in-out duration-150"
                       role="menuitem"
                       onClick={() => logout()}
                     >
